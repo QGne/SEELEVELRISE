@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Username</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <style>
+        /* Optional: Set the container to take full height for perfect vertical centering */
+        .full-height {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center full-height">
+        <div class="col-md-6 text-center">
+                        <img src="{{ url_for('static', filename='theme.png') }}" alt="Theme Image" class="mb-4" style="max-width: 100%; height: auto;">
+
+<!--            <h1 class="mb-4">Welcome!</h1> -->
+            <form action="/todirect" method="POST">
+                <div class="form-group">
+                    <label for="username">Enter your name:</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Your name">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Enter</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!-- _sidebar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .text-center.menu-heading {
+    background-color: #ffffff !important;
+    padding: 10px; /* Optional: add padding to make it look like a block */
+    color: black; /* Adjust text color for contrast */
+}
+
+.menu-heading {
+    background-color: #ffffff !important; /* Bright color to test visibility */
+    padding: 0px;
+    color: black;
+    text-align: center;
+}
+
+        /* Sidebar Styling */
+        .sidebar {
+            height: 100vh;
+            width: 200px;
+            background-color: #e8e8e8;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        /* Main Content Styling */
+        .content {
+            margin-left: 220px; /* Offset by sidebar width */
+            padding: 20px;
+        }
+
+        /* Sidebar Links */
+        .sidebar a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        /* Sidebar Link Hover Effect */
+        .sidebar a:hover {
+            background-color: #ddd;
+            color: #007bff;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="menu-container">
+   <h4 class="text-center menu-heading">Menu</h4>
+</div>
+        <a href="{{ url_for('main.todirect') }}">Welcome</a>
+        <a href="{{ url_for('main.photo') }}">Photo Conversion</a>
+        <a href="{{ url_for('main.underwater') }}">Underwater Prediction</a>
+        <a href="{{ url_for('main.logout') }}">Log Out</a> <!-- Log Out link -->
+    </div>
+
+
+</body>
+</html>
