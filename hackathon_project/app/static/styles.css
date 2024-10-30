@@ -1,0 +1,16 @@
+/* static/styles.css */
+
+body {
+    background-color: #95edff; /* #60b3fdSet a general background color #acd6ff */
+}
+
+.header {
+    color: white;
+    background-color: darkgreen;
+    padding: 10px;
+}
+
+.content {
+    color: #5c0a4e;
+    font-size: 18px;
+}
