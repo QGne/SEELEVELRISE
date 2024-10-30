@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Conversion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Include the sidebar -->
+    {% include '_sidebar.html' %}
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <h1>Convert Your Photo</h1>
+            <!-- Upload form -->
+        <form action="{{ url_for('main.photo') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- Display uploaded and processed images if they exist -->
+        {% if uploaded_image %}
+            <h2>The Image</h2>
+            <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Original Image">
+        {% endif %}
+
+        {% if processed_image_path %}
+            <h2>Processed Image (Underwater Effect)</h2>
+            <img src="{{ url_for('static', filename=processed_image_path) }}" alt="Processed Underwater Image">
+        {% endif %}
+
+        <!-- AI-enhanced underwater photo form -->
+        {% if uploaded_image %}
+            <form action="{{ url_for('main.photoai') }}" method="POST">
+                <button type="submit">AI-Enhanced Underwater Photo</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
